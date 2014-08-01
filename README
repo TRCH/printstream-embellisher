@@ -12,8 +12,7 @@ new SystemPrintStreamEmbellisherBootstrap().init(); AND set the JVM flag system.
 Example:
 
 public class Client {
-
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) {
 		new SystemPrintStreamEmbellisherBootstrap().init();
 		System.out.println("info");
 		System.err.println("error");
