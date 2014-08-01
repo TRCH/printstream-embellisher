@@ -1,0 +1,29 @@
+A small library that wraps stdout and stderr (PrintStream) and appends the thread name and stack frame of the method
+that invoked System.out.println or System.err.println. Currently the other methods in PrintStream aren't fully supported.
+
+To activate this functionality simple add
+
+new SystemPrintStreamEmbellisherBootstrap(true).init();
+
+OR
+
+new SystemPrintStreamEmbellisherBootstrap().init(); AND set JVM flag system.printstream.embellisher.enabled to true.
+
+Example:
+
+public class Client {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		new SystemPrintStreamEmbellisherBootstrap().init();
+		System.out.println("info");
+		System.err.println("error");
+	}
+}
+
+info [ thread = main, frame = com.trch.Client.main(Client.java:10) ]
+error [ thread = main, frame = com.trch.Client.main(Client.java:11) ]
+
+
+
+My main reason for writing this was when working with complex stacks it is something difficult to determine who is writing to stderr or stdout.
+This is more of a POC. If I need more from it in the future I'll enhance it.

@@ -1,4 +1,4 @@
-package com.trch;
+package com.trch.sysprintstream;
 
 /**
  * 
@@ -11,7 +11,7 @@ public class SystemPrintStreamEmbellisherBootstrap {
 	private boolean hasInit = false; 
 	
 	public SystemPrintStreamEmbellisherBootstrap(){
-		ENABLED = isEnabled();
+		this.ENABLED = isEnabled();
 	}
 
 	public SystemPrintStreamEmbellisherBootstrap(final boolean enabled){
