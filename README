@@ -26,4 +26,3 @@ error [ thread = main, frame = com.trch.Client.main(Client.java:11) ]
 
 
 My main reason for writing this was when working with complex stacks it is sometimes difficult to determine who is writing to stderr or stdout.
-This is more of a POC. If I need more from it in the future I'll enhance it.
